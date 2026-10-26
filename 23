@@ -1,0 +1,36 @@
+SLIP 23
+Q1. Swap two numbers using a third variable (5 marks)
+Program key: swap temp. Appears once in this slip set.
+#include <stdio.h>
+int main(void) {
+    int a, b, temp;
+    printf("Enter two numbers: "); scanf("%d%d", &a, &b);
+    temp = a; a = b; b = temp;
+    printf("After swapping: a = %d, b = %d\n", a, b);
+    return 0;
+}
+Q2. Accept a single digit and display it in words (10 marks)
+Program key: digit words. Appears once in this slip set.
+#include <stdio.h>
+int main(void) {
+    int n;
+    const char *words[] = {"zero","one","two","three","four","five","six","seven","eight","nine"};
+    printf("Enter a single digit (0-9): "); scanf("%d", &n);
+    if (n >= 0 && n <= 9) printf("%s\n", words[n]);
+    else printf("Invalid digit\n");
+    return 0;
+}
+Q3. Accept a character and n; display next n characters using a user-defined function (10 marks)
+Program key: next chars function. REPEATED 4 times — Slip 6 Q3, Slip 11 Q3, Slip 12 Q3, Slip 23 Q3
+#include <stdio.h>
+void nextChars(char ch, int n) {
+    int i;
+    for (i = 1; i <= n; i++) printf("%c ", ch + i);
+    printf("\n");
+}
+int main(void) {
+    char ch; int n;
+    printf("Enter a character and n: "); scanf(" %c%d", &ch, &n);
+    nextChars(ch, n);
+    return 0;
+}
