@@ -1,0 +1,35 @@
+SLIP 16
+Q1. Swap two numbers without using a third variable (5 marks)
+Program key: swap no temp. Appears once in this slip set.
+#include <stdio.h>
+int main(void) {
+    int a, b;
+    printf("Enter two numbers: "); scanf("%d%d", &a, &b);
+    a = a + b;
+    b = a - b;
+    a = a - b;
+    printf("After swapping: a = %d, b = %d\n", a, b);
+    return 0;
+}
+Q2. Accept coordinates of two points and calculate distance (10 marks)
+Program key: distance points. Appears once in this slip set.
+#include <stdio.h>
+#include <math.h>
+int main(void) {
+    double x1, y1, x2, y2, d;
+    printf("Enter x1 y1 x2 y2: "); scanf("%lf%lf%lf%lf", &x1, &y1, &x2, &y2);
+    d = sqrt((x2-x1)*(x2-x1) + (y2-y1)*(y2-y1));
+    printf("Distance = %.2f\n", d);
+    return 0;
+}
+Q3. Accept an integer and count its digits (10 marks)
+Program key: digit count. REPEATED 2 times — Slip 16 Q3, Slip 30 Q3
+#include <stdio.h>
+int main(void) {
+    int n, count = 0;
+    printf("Enter an integer: "); scanf("%d", &n);
+    if (n == 0) count = 1;
+    while (n != 0) { count++; n /= 10; }
+    printf("Number of digits = %d\n", count);
+    return 0;
+}
