@@ -1,0 +1,36 @@
+SLIP 8
+Q1. Print 10, 20, 30, ... 100 using goto (5 marks)
+Program key: goto tens. Appears once in this slip set.
+#include <stdio.h>
+int main(void) {
+    int n = 10;
+start:
+    printf("%d ", n);
+    n += 10;
+    if (n <= 100) goto start;
+    printf("\n");
+    return 0;
+}
+Q2. Accept n and display all even numbers up to n (10 marks)
+Program key: even upto. REPEATED 5 times — Slip 3 Q2, Slip 7 Q2, Slip 8 Q2, Slip 14 Q2, Slip 15 Q2
+#include <stdio.h>
+int main(void) {
+    int n, i;
+    printf("Enter n: ");
+    scanf("%d", &n);
+    for (i = 2; i <= n; i += 2)
+        printf("%d ", i);
+    printf("\n");
+    return 0;
+}
+Q3. Calculate volume and total surface area of a cuboid (10 marks)
+Program key: cuboid. REPEATED 2 times — Slip 7 Q3, Slip 8 Q3
+#include <stdio.h>
+int main(void) {
+    float l, b, h, tsa, volume;
+    printf("Enter length, breadth, height: "); scanf("%f%f%f", &l, &b, &h);
+    tsa = 2 * (l*b + l*h + b*h);
+    volume = l * b * h;
+    printf("Total surface area = %.2f\nVolume = %.2f\n", tsa, volume);
+    return 0;
+}
