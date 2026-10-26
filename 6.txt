@@ -1,0 +1,38 @@
+SLIP 6
+Q1. Add the first 10 numbers (1 to 10) (5 marks)
+Program key: sum10 for. Appears once in this slip set.
+#include <stdio.h>
+int main(void) {
+    int i, sum = 0;
+    for (i = 1; i <= 10; i++) sum += i;
+    printf("Sum = %d\n", sum);
+    return 0;
+}
+Q2. Recursive function to calculate product of two numbers without using * (10 marks)
+Program key: recursive product. Appears once in this slip set.
+#include <stdio.h>
+int product(int a, int b) {
+    if (b == 0) return 0;
+    if (b < 0) return -product(a, -b);
+    return a + product(a, b - 1);
+}
+int main(void) {
+    int a, b;
+    printf("Enter two integers: "); scanf("%d%d", &a, &b);
+    printf("Product = %d\n", product(a, b));
+    return 0;
+}
+Q3. User-defined function accepts a character and n, then displays the next n characters (10 marks)
+Program key: next chars function. REPEATED 4 times — Slip 6 Q3, Slip 11 Q3, Slip 12 Q3, Slip 23 Q3
+#include <stdio.h>
+void nextChars(char ch, int n) {
+    int i;
+    for (i = 1; i <= n; i++) printf("%c ", ch + i);
+    printf("\n");
+}
+int main(void) {
+    char ch; int n;
+    printf("Enter a character and n: "); scanf(" %c%d", &ch, &n);
+    nextChars(ch, n);
+    return 0;
+}
