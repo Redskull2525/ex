@@ -1,0 +1,46 @@
+SLIP 25
+Q1. Calculate factorial of a given number (5 marks)
+Program key: factorial iterative. REPEATED 2 times — Slip 21 Q1, Slip 25 Q1
+#include <stdio.h>
+int main(void) {
+    int n, i;
+    unsigned long long fact = 1;
+    printf("Enter a non-negative integer: "); scanf("%d", &n);
+    if (n < 0) { printf("Factorial is not defined for negative numbers\n"); return 0; }
+    for (i = 1; i <= n; i++) fact *= i;
+    printf("Factorial = %llu\n", fact);
+    return 0;
+}
+Q2. Accept n in range 0–99 and count/print from 0 up to n using break (10 marks)
+Program key: count to n break. Appears once in this slip set.
+#include <stdio.h>
+int main(void) {
+    int n, i;
+    printf("Enter n (0 to 99): "); scanf("%d", &n);
+    if (n < 0 || n > 99) { printf("Out of range\n"); return 0; }
+    for (i = 0; ; i++) {
+        if (i > n) break;
+        printf("%d ", i);
+    }
+    printf("\n");
+    return 0;
+}
+Q3. Input five subject marks; calculate percentage and grade using given thresholds (10 marks)
+Program key: marks grade. REPEATED 2 times — Slip 17 Q3, Slip 25 Q3
+#include <stdio.h>
+int main(void) {
+    float p, c, b, m, comp, total, percentage;
+    char grade;
+    printf("Enter marks for Physics Chemistry Biology Mathematics Computer: ");
+    scanf("%f%f%f%f%f", &p, &c, &b, &m, &comp);
+    total = p + c + b + m + comp;
+    percentage = total / 5.0;
+    if (percentage >= 90) grade = 'A';
+    else if (percentage >= 80) grade = 'B';
+    else if (percentage >= 70) grade = 'C';
+    else if (percentage >= 60) grade = 'D';
+    else if (percentage >= 40) grade = 'E';
+    else grade = 'F';
+    printf("Percentage = %.2f%%\nGrade = %c\n", percentage, grade);
+    return 0;
+}
