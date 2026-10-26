@@ -1,0 +1,36 @@
+SLIP 14
+Q1. Print sum of first 10 integers using do-while loop (5 marks)
+Program key: sum10 dowhile. Appears once in this slip set.
+#include <stdio.h>
+int main(void) {
+    int i = 1, sum = 0;
+    do { sum += i; i++; } while (i <= 10);
+    printf("Sum = %d\n", sum);
+    return 0;
+}
+Q2. Accept n and display all even numbers up to n (10 marks)
+Program key: even upto. REPEATED 5 times — Slip 3 Q2, Slip 7 Q2, Slip 8 Q2, Slip 14 Q2, Slip 15 Q2
+#include <stdio.h>
+int main(void) {
+    int n, i;
+    printf("Enter n: ");
+    scanf("%d", &n);
+    for (i = 2; i <= n; i += 2)
+        printf("%d ", i);
+    printf("\n");
+    return 0;
+}
+Q3. Read ages of n persons and count those aged 50 to 60, using continue (10 marks)
+Program key: age 50 60. Appears once in this slip set.
+#include <stdio.h>
+int main(void) {
+    int n, i, age, count = 0;
+    printf("How many persons? "); scanf("%d", &n);
+    for (i = 1; i <= n; i++) {
+        printf("Enter age: "); scanf("%d", &age);
+        if (age < 50 || age > 60) continue;
+        count++;
+    }
+    printf("Persons aged 50 to 60 = %d\n", count);
+    return 0;
+}
