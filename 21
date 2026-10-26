@@ -1,0 +1,45 @@
+SLIP 21
+Q1. Calculate factorial of a given number (5 marks)
+Program key: factorial iterative. REPEATED 2 times — Slip 21 Q1, Slip 25 Q1
+#include <stdio.h>
+int main(void) {
+    int n, i;
+    unsigned long long fact = 1;
+    printf("Enter a non-negative integer: "); scanf("%d", &n);
+    if (n < 0) { printf("Factorial is not defined for negative numbers\n"); return 0; }
+    for (i = 1; i <= n; i++) fact *= i;
+    printf("Factorial = %llu\n", fact);
+    return 0;
+}
+Q2. Input three sides and check whether a triangle is valid (10 marks)
+Program key: triangle valid. Appears once in this slip set.
+#include <stdio.h>
+int main(void) {
+    int a, b, c;
+    printf("Enter three sides: "); scanf("%d%d%d", &a, &b, &c);
+    if (a > 0 && b > 0 && c > 0 &&
+        a+b > c && a+c > b && b+c > a)
+        printf("Valid triangle\n");
+    else printf("Invalid triangle\n");
+    return 0;
+}
+Q3. Accept x and y; menu: swap, greater-than check, equality check, quotient and remainder (10 marks)
+Program key: xy menu compare. Appears once in this slip set.
+#include <stdio.h>
+int main(void) {
+    int x, y, choice, temp;
+    printf("Enter x and y: "); scanf("%d%d", &x, &y);
+    printf("1.Swap 2.Greater than 3.Equality 4.Quotient/remainder\nChoice: ");
+    scanf("%d", &choice);
+    switch (choice) {
+        case 1: temp=x; x=y; y=temp; printf("x=%d y=%d\n", x, y); break;
+        case 2: printf(x>y ? "x is greater than y\n" : "x is not greater than y\n"); break;
+        case 3: printf(x==y ? "Equal\n" : "Not equal\n"); break;
+        case 4:
+            if (y==0) printf("Error: division by zero\n");
+            else printf("Quotient=%d Remainder=%d\n", x/y, x%y);
+            break;
+        default: printf("Invalid choice\n");
+    }
+    return 0;
+}
