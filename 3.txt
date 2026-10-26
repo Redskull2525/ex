@@ -1,0 +1,41 @@
+SLIP 3
+Q1. Check whether a given number is positive (5 marks)
+Program key: positive only. REPEATED 2 times — Slip 3 Q1, Slip 12 Q1
+#include <stdio.h>
+int main(void) {
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    if (n > 0) printf("Positive number\n");
+    else printf("Number is not positive\n");
+    return 0;
+}
+Q2. Accept n and display all even numbers up to n (10 marks)
+Program key: even upto. REPEATED 5 times — Slip 3 Q2, Slip 7 Q2, Slip 8 Q2, Slip 14 Q2, Slip 15 Q2
+#include <stdio.h>
+int main(void) {
+    int n, i;
+    printf("Enter n: ");
+    scanf("%d", &n);
+    for (i = 2; i <= n; i += 2)
+        printf("%d ", i);
+    printf("\n");
+    return 0;
+}
+Q3. Accept x and y; menu: equality, less than, addition, subtraction (10 marks)
+Program key: xy menu arithmetic. Appears once in this slip set.
+#include <stdio.h>
+int main(void) {
+    int x, y, choice;
+    printf("Enter x and y: "); scanf("%d%d", &x, &y);
+    printf("1.Equality 2.Less than 3.Addition 4.Subtraction\nChoice: ");
+    scanf("%d", &choice);
+    switch (choice) {
+        case 1: printf(x == y ? "Equal\n" : "Not equal\n"); break;
+        case 2: printf(x < y ? "x is less than y\n" : "x is not less than y\n"); break;
+        case 3: printf("Sum = %d\n", x + y); break;
+        case 4: printf("Difference = %d\n", x - y); break;
+        default: printf("Invalid choice\n");
+    }
+    return 0;
+}
