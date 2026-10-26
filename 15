@@ -1,0 +1,40 @@
+SLIP 15
+Q1. Print sum of first 20 integers using while loop (5 marks)
+Program key: sum20 while. Appears once in this slip set.
+#include <stdio.h>
+int main(void) {
+    int i = 1, sum = 0;
+    while (i <= 20) { sum += i; i++; }
+    printf("Sum = %d\n", sum);
+    return 0;
+}
+Q2. Accept n and display all even numbers up to n (10 marks)
+Program key: even upto. REPEATED 5 times — Slip 3 Q2, Slip 7 Q2, Slip 8 Q2, Slip 14 Q2, Slip 15 Q2
+#include <stdio.h>
+int main(void) {
+    int n, i;
+    printf("Enter n: ");
+    scanf("%d", &n);
+    for (i = 2; i <= n; i += 2)
+        printf("%d ", i);
+    printf("\n");
+    return 0;
+}
+Q3. Input radius; switch menu for area, circumference, and volume of sphere (10 marks)
+Program key: circle sphere menu. REPEATED 3 times — Slip 5 Q3, Slip 15 Q3, Slip 18 Q3
+#include <stdio.h>
+#define PI 3.141592653589793
+int main(void) {
+    double r;
+    int choice;
+    printf("Enter radius: "); scanf("%lf", &r);
+    printf("1.Area of circle 2.Circumference 3.Volume of sphere\nChoice: ");
+    scanf("%d", &choice);
+    switch (choice) {
+        case 1: printf("Area = %.2f\n", PI * r * r); break;
+        case 2: printf("Circumference = %.2f\n", 2 * PI * r); break;
+        case 3: printf("Volume = %.2f\n", (4.0 / 3.0) * PI * r * r * r); break;
+        default: printf("Invalid choice\n");
+    }
+    return 0;
+}
