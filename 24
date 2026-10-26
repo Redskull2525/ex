@@ -1,0 +1,44 @@
+SLIP 24
+Q1. Check whether a given number is positive or negative (5 marks)
+Program key: positive negative. REPEATED 2 times — Slip 24 Q1, Slip 30 Q1
+#include <stdio.h>
+int main(void) {
+    int n;
+    printf("Enter a number: "); scanf("%d", &n);
+    if (n > 0) printf("Positive\n");
+    else if (n < 0) printf("Negative\n");
+    else printf("Zero\n");
+    return 0;
+}
+Q2. Input a character representing a weekday; print corresponding day using switch, with default for invalid input (10 marks)
+Program key: weekday switch. Appears once in this slip set.
+#include <stdio.h>
+int main(void) {
+    char ch;
+    printf("Enter day initial (M, T, W, H, F, S, U): ");
+    scanf(" %c", &ch);
+    switch (ch) {
+        case 'M': case 'm': printf("Monday\n"); break;
+        case 'T': case 't': printf("Tuesday (T is used for Tuesday)\n"); break;
+        case 'W': case 'w': printf("Wednesday\n"); break;
+        case 'H': case 'h': printf("Thursday\n"); break;
+        case 'F': case 'f': printf("Friday\n"); break;
+        case 'S': case 's': printf("Saturday (ambiguous with Sunday)\n"); break;
+        case 'U': case 'u': printf("Sunday\n"); break;
+        default: printf("Invalid input\n");
+    }
+    return 0;
+}
+Q3. Find the smallest element in an array (10 marks)
+Program key: smallest array. Appears once in this slip set.
+#include <stdio.h>
+int main(void) {
+    int a[100], n, i, min;
+    printf("Enter number of elements: "); scanf("%d", &n);
+    if (n < 1 || n > 100) return 0;
+    for (i = 0; i < n; i++) scanf("%d", &a[i]);
+    min = a[0];
+    for (i = 1; i < n; i++) if (a[i] < min) min = a[i];
+    printf("Smallest = %d\n", min);
+    return 0;
+}
