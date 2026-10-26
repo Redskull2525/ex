@@ -1,0 +1,33 @@
+SLIP 10
+Q1. Accept age and check voting eligibility using conditional/ternary operator (5 marks)
+Program key: voting. REPEATED 2 times — Slip 2 Q1, Slip 10 Q1
+#include <stdio.h>
+int main(void) {
+    int age;
+    printf("Enter age: ");
+    scanf("%d", &age);
+    (age >= 18) ? printf("Eligible for voting\n")
+                : printf("Not eligible for voting\n");
+    return 0;
+}
+Q2. Accept a character and display its previous and next character (10 marks)
+Program key: previous next char. Appears once in this slip set.
+#include <stdio.h>
+int main(void) {
+    char ch;
+    printf("Enter a character: "); scanf(" %c", &ch);
+    printf("Previous = %c\nNext = %c\n", ch - 1, ch + 1);
+    return 0;
+}
+Q3. Accept cylinder radius and height; display surface area and volume (10 marks)
+Program key: cylinder. Appears once in this slip set.
+#include <stdio.h>
+#define PI 3.141592653589793
+int main(void) {
+    double r, h, area, volume;
+    printf("Enter radius and height: "); scanf("%lf%lf", &r, &h);
+    area = 2*PI*r*r + 2*PI*r*h;
+    volume = PI*r*r*h;
+    printf("Surface area = %.2f\nVolume = %.2f\n", area, volume);
+    return 0;
+}
