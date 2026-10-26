@@ -1,0 +1,45 @@
+SLIP 1
+Q1. Multiplication of two numbers (5 marks)
+Program key: multiply. Appears once in this slip set.
+#include <stdio.h>
+int main(void) {
+    int a, b;
+    printf("Enter two numbers: ");
+    scanf("%d%d", &a, &b);
+    printf("Multiplication = %d\n", a * b);
+    return 0;
+}
+Q2. Accept Fahrenheit; print Celsius and Kelvin (10 marks)
+Program key: temperature. REPEATED 3 times — Slip 1 Q2, Slip 19 Q2, Slip 29 Q2
+#include <stdio.h>
+int main(void) {
+    float f, c, k;
+    printf("Enter temperature in Fahrenheit: ");
+    scanf("%f", &f);
+    c = (5.0 / 9.0) * (f - 32);
+    k = c + 273.15;
+    printf("Celsius = %.2f\nKelvin = %.2f\n", c, k);
+    return 0;
+}
+Q3. Menu-driven arithmetic using switch and +, -, *, / (10 marks)
+Program key: menu basic. Appears once in this slip set.
+#include <stdio.h>
+int main(void) {
+    int a, b;
+    char op;
+    printf("Enter two integers: ");
+    scanf("%d%d", &a, &b);
+    printf("Enter operator (+, -, *, /): ");
+    scanf(" %c", &op);
+    switch (op) {
+        case '+': printf("Result = %d\n", a + b); break;
+        case '-': printf("Result = %d\n", a - b); break;
+        case '*': printf("Result = %d\n", a * b); break;
+        case '/':
+            if (b != 0) printf("Result = %.2f\n", (float)a / b);
+            else printf("Error: division by zero\n");
+            break;
+        default: printf("Invalid operator\n");
+    }
+    return 0;
+}
