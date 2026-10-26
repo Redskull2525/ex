@@ -1,0 +1,36 @@
+SLIP 4
+Q1. Accept an integer and check whether it is even or odd (5 marks)
+Program key: even odd. Appears once in this slip set.
+#include <stdio.h>
+int main(void) {
+    int n;
+    printf("Enter an integer: "); scanf("%d", &n);
+    if (n % 2 == 0) printf("Even\n");
+    else printf("Odd\n");
+    return 0;
+}
+Q2. Accept x and y; calculate the sum of integers strictly between them (10 marks)
+Program key: sum between. Appears once in this slip set.
+#include <stdio.h>
+int main(void) {
+    int x, y, i, sum = 0, low, high;
+    printf("Enter x and y: "); scanf("%d%d", &x, &y);
+    low = (x < y) ? x : y;
+    high = (x > y) ? x : y;
+    for (i = low + 1; i < high; i++) sum += i;
+    printf("Sum of integers between them = %d\n", sum);
+    return 0;
+}
+Q3. Create isEven(int n), returning 1 if even and 0 otherwise; use it to check n numbers (10 marks)
+Program key: is even function. Appears once in this slip set.
+#include <stdio.h>
+int isEven(int n) { return (n % 2 == 0) ? 1 : 0; }
+int main(void) {
+    int count, i, n;
+    printf("How many numbers? "); scanf("%d", &count);
+    for (i = 1; i <= count; i++) {
+        printf("Enter number: "); scanf("%d", &n);
+        if (isEven(n)) printf("Even\n"); else printf("Odd\n");
+    }
+    return 0;
+}
