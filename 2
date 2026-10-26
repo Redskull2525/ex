@@ -1,0 +1,51 @@
+SLIP 2
+Q1. Check whether age is eligible for voting using conditional/ternary operator (5 marks)
+Program key: voting. REPEATED 2 times — Slip 2 Q1, Slip 10 Q1
+#include <stdio.h>
+int main(void) {
+    int age;
+    printf("Enter age: ");
+    scanf("%d", &age);
+    (age >= 18) ? printf("Eligible for voting\n")
+                : printf("Not eligible for voting\n");
+    return 0;
+}
+Q2. Accept n and display all even and odd numbers up to n (10 marks)
+Program key: even odd upto. REPEATED 2 times — Slip 2 Q2, Slip 9 Q2
+#include <stdio.h>
+int main(void) {
+    int n, i;
+    printf("Enter n: "); scanf("%d", &n);
+    printf("Even: ");
+    for (i = 1; i <= n; i++) if (i % 2 == 0) printf("%d ", i);
+    printf("\nOdd: ");
+    for (i = 1; i <= n; i++) if (i % 2 != 0) printf("%d ", i);
+    printf("\n");
+    return 0;
+}
+Q3. Accept x and y; menu: equality, less than, quotient/remainder, and test whether a number lies between x and y inclusive (10 marks)
+Program key: xy menu range. Appears once in this slip set.
+#include <stdio.h>
+int main(void) {
+    int x, y, choice, n;
+    printf("Enter x and y: ");
+    scanf("%d%d", &x, &y);
+    printf("1.Equality 2.Less than 3.Quotient/remainder 4.Range\nChoice: ");
+    scanf("%d", &choice);
+    switch (choice) {
+        case 1: printf(x == y ? "Equal\n" : "Not equal\n"); break;
+        case 2: printf(x < y ? "x is less than y\n" : "x is not less than y\n"); break;
+        case 3:
+            if (y == 0) printf("Error: division by zero\n");
+            else printf("Quotient = %d, Remainder = %d\n", x / y, x % y);
+            break;
+        case 4:
+            printf("Enter number to check: "); scanf("%d", &n);
+            if (n >= (x < y ? x : y) && n <= (x > y ? x : y))
+                printf("Number is in range\n");
+            else printf("Number is outside range\n");
+            break;
+        default: printf("Invalid choice\n");
+    }
+    return 0;
+}
