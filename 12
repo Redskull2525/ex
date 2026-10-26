@@ -1,0 +1,37 @@
+SLIP 12
+Q1. Check whether a given number is positive or not (5 marks)
+Program key: positive only. REPEATED 2 times — Slip 3 Q1, Slip 12 Q1
+#include <stdio.h>
+int main(void) {
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    if (n > 0) printf("Positive number\n");
+    else printf("Number is not positive\n");
+    return 0;
+}
+Q2. Print the pattern $, $$, $$$, $$$$ using loops (10 marks)
+Program key: dollar pattern. Appears once in this slip set.
+#include <stdio.h>
+int main(void) {
+    int i, j;
+    for (i = 1; i <= 4; i++) {
+        for (j = 1; j <= i; j++) printf("$");
+        printf("\n");
+    }
+    return 0;
+}
+Q3. User-defined function accepts a character and n, then displays next n characters (10 marks)
+Program key: next chars function. REPEATED 4 times — Slip 6 Q3, Slip 11 Q3, Slip 12 Q3, Slip 23 Q3
+#include <stdio.h>
+void nextChars(char ch, int n) {
+    int i;
+    for (i = 1; i <= n; i++) printf("%c ", ch + i);
+    printf("\n");
+}
+int main(void) {
+    char ch; int n;
+    printf("Enter a character and n: "); scanf(" %c%d", &ch, &n);
+    nextChars(ch, n);
+    return 0;
+}
