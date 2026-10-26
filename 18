@@ -1,0 +1,38 @@
+SLIP 18
+Q1. Print sum of first 20 integers using do-while loop (5 marks)
+Program key: sum20 dowhile. Appears once in this slip set.
+#include <stdio.h>
+int main(void) {
+    int i = 1, sum = 0;
+    do { sum += i; i++; } while (i <= 20);
+    printf("Sum = %d\n", sum);
+    return 0;
+}
+Q2. Accept a number and print its multiplication table (10 marks)
+Program key: table. REPEATED 3 times — Slip 5 Q2, Slip 18 Q2, Slip 22 Q2
+#include <stdio.h>
+int main(void) {
+    int n, i;
+    printf("Enter number: "); scanf("%d", &n);
+    for (i = 1; i <= 10; i++)
+        printf("%d x %d = %d\n", n, i, n * i);
+    return 0;
+}
+Q3. Input radius; switch menu for area, circumference, and volume of sphere (10 marks)
+Program key: circle sphere menu. REPEATED 3 times — Slip 5 Q3, Slip 15 Q3, Slip 18 Q3
+#include <stdio.h>
+#define PI 3.141592653589793
+int main(void) {
+    double r;
+    int choice;
+    printf("Enter radius: "); scanf("%lf", &r);
+    printf("1.Area of circle 2.Circumference 3.Volume of sphere\nChoice: ");
+    scanf("%d", &choice);
+    switch (choice) {
+        case 1: printf("Area = %.2f\n", PI * r * r); break;
+        case 2: printf("Circumference = %.2f\n", 2 * PI * r); break;
+        case 3: printf("Volume = %.2f\n", (4.0 / 3.0) * PI * r * r * r); break;
+        default: printf("Invalid choice\n");
+    }
+    return 0;
+}
