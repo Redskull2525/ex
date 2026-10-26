@@ -1,0 +1,36 @@
+SLIP 9
+Q1. Count/print numbers from 0 to 99 (5 marks)
+Program key: count 0 99. Appears once in this slip set.
+#include <stdio.h>
+int main(void) {
+    int i;
+    for (i = 0; i <= 99; i++) printf("%d ", i);
+    printf("\n");
+    return 0;
+}
+Q2. Accept n and display all even and odd numbers up to n (10 marks)
+Program key: even odd upto. REPEATED 2 times — Slip 2 Q2, Slip 9 Q2
+#include <stdio.h>
+int main(void) {
+    int n, i;
+    printf("Enter n: "); scanf("%d", &n);
+    printf("Even: ");
+    for (i = 1; i <= n; i++) if (i % 2 == 0) printf("%d ", i);
+    printf("\nOdd: ");
+    for (i = 1; i <= n; i++) if (i % 2 != 0) printf("%d ", i);
+    printf("\n");
+    return 0;
+}
+Q3. Calculate area and circumference of a circle using a user-defined function (10 marks)
+Program key: circle function. Appears once in this slip set.
+#include <stdio.h>
+#define PI 3.141592653589793
+void circle(double r) {
+    printf("Area = %.2f\nCircumference = %.2f\n", PI*r*r, 2*PI*r);
+}
+int main(void) {
+    double r;
+    printf("Enter radius: "); scanf("%lf", &r);
+    circle(r);
+    return 0;
+}
